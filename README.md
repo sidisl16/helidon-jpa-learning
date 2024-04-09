@@ -11,40 +11,6 @@ mvn package
 java -jar target/helidon-learning.jar
 ```
 
-## Exercise the application
-
-Basic:
-```
-curl -X GET http://localhost:8080/simple-greet
-Hello World!
-```
-
-
-JSON:
-```
-curl -X GET http://localhost:8080/greet
-{"message":"Hello World!"}
-
-curl -X GET http://localhost:8080/greet/Joe
-{"message":"Hello Joe!"}
-
-curl -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Hola"}' http://localhost:8080/greet/greeting
-
-curl -X GET http://localhost:8080/greet/Jose
-{"message":"Hola Jose!"}
-```
-
-```
-curl -X GET http://localhost:8080/pokemon
-[{"id":1,"type":12,"name":"Bulbasaur"}, ...]
-
-curl -X GET http://localhost:8080/type
-[{"id":1,"name":"Normal"}, ...]
-
-curl -H "Content-Type: application/json" --request POST --data '{"id":100, "type":1, "name":"Test"}' http://localhost:8080/pokemon
-```
-
-
 ## Try metrics
 
 ```
