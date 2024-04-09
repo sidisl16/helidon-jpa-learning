@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: helidon-learning
+  labels:
+    app: helidon-learning
+spec:
+  type: ClusterIP
+  selector:
+    app: helidon-learning
+  ports:
+    - name: tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: helidon-learning
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helidon-learning
+  template:
+    metadata:
+      labels:
+        app: helidon-learning
+        version: v1
+    spec:
+      containers:
+      - name: helidon-learning
+        image: helidon-learning
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080

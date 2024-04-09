@@ -1,0 +1,6 @@
+#Helidon Project Configuration
+#Tue Apr 09 08:06:11 UTC 2024
+schema.version=1.1.0
+helidon.version=4.0.7
+project.flavor=mp
+project.archetype=database
